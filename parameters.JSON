@@ -6,20 +6,20 @@
 			"value":[
 				{
 					"storageAccountName": "DeployStorageAccSI",
-					"storageAccountSku": "Standard_LRS",
-					"storageAccountLocation": "South India"
 				},
 				{
-					"storageAccountName": "DeployStorageAccCI",
-					"storageAccountSku": "Standard_LRS",
-					"storageAccountLocation": "Central India"
+					"storageAccountName": "DeployStorageAccCI"
 				},
 				{
-					"storageAccountName": "DeployStorageAccWI",
-					"storageAccountSku": "Standard_LRS",
-					"storageAccountLocation": "West India"
+					"storageAccountName": "DeployStorageAccWI"
 				}
 			]
+		},
+		"storageAccountSku":{
+		"value":"Standard_LRS"
+		},
+		"storageAccountLocation":{
+		"value":"Central India"
 		}
 	}	
 }
