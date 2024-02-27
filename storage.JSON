@@ -4,20 +4,30 @@
   "parameters": {
     "storageAccounts": {
       "type": "array"
+    },
+    "storageAccountSku": {
+      "type": "string"
+    },
+    "storageAccountLocation": {
+      "type": "string"
     }
   },
-  "variables": { },
+  "variables": {
+  "accname":"[toLower(parameters('storageAccounts')[CopyIndex()].storageAccountName)]",
+  "acclocation":"[parameters('storageAccountLocation')]",
+  "accsku":"[parameter('storageAccountSku')]"
+  },
   "functions": [ ],
   "resources": [
     {
-      "name": "[toLower(parameters('storageAccounts')[CopyIndex()].storageAccountName)]",
+      "name": ,
       "type": "Microsoft.Storage/storageAccounts",
       "apiVersion": "2018-11-01",
       "sku": {
-        "name": "[parameters('storageAccounts')[CopyIndex()].storageAccountSku]"
+        "name": "[variables('accsku')]"
       },
       "kind": "StorageV2",
-      "location": "[parameters('storageAccounts')[CopyIndex()].storageAccountLocation]",
+      "location": "[variables('acclocation')]",
       "properties": {
         "supportsHttpsTrafficOnly": true
       },
